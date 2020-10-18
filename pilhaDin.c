@@ -1,8 +1,20 @@
+#define DINAMICA
 #include <stdio.h>
 #include <stdlib.h>
-#include "pilha.h" // Inclui os Protótipos das minhas Funções
+#include "pilha.h"   // Inclui os Protótipos das minhas Funções
 
-int Push(Pilha *pilha, int item)
+//Definição do tipo Pilha
+struct elemento
+{
+   ItemType dado;
+   struct elemento *prox;
+};
+
+// Redefinição do tipo struct elemento como Elem
+typedef struct elemento Elem;
+
+// Minhas funções para manipular a Pilha Dinãmica
+int Push(Pilha *pilha, ItemType item)
 {
    if (pilha == NULL)
       return 0;
@@ -10,7 +22,7 @@ int Push(Pilha *pilha, int item)
    no = (Elem *)malloc(sizeof(Elem));
    if (no == NULL)
       return 0;
-   no->itemType = item;
+   no->dado = item;
    no->prox = (*pilha);
    *pilha = no;
    return 1;
@@ -34,7 +46,7 @@ int Top(Pilha *pilha)
       return 0;
    if ((*pilha) == NULL)
       return 0;
-   return (*pilha)->itemType;
+   return (*pilha)->dado.inteiro;
 }
 
 int Size(Pilha *pilha)
@@ -67,7 +79,8 @@ int SetSize(Pilha *pilha, int tamanho)
    {
       while (size < tamanho)
       {
-         Push(pilha, 2);
+         ItemType temp = {2};
+         Push(pilha, temp);
          size++;
       }
    }
@@ -122,7 +135,7 @@ void Print(Pilha *pilha)
    Elem *no = *pilha;
    while (no != NULL)
    {
-      printf("Dado: %d\n", no->itemType);
+      printf("Dado: %d\n", no->dado.inteiro);
       no = no->prox;
    }
 }

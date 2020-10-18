@@ -1,18 +1,24 @@
-struct elemento
+#define MAX 100     // Tamanho máximo para a pilha estática
+
+// Definição do tipo Pilha para Dinâmica ou Estática
+#ifdef DINAMICA
+   typedef struct elemento *Pilha;
+#else
+   typedef struct elemento Pilha;
+#endif
+
+// Definição do tipo ItemType
+struct item
 {
-   int itemType;
-   struct elemento *prox;
+   int inteiro;
 };
 
-// Redefinição do tipo struct elemento como Elem
-typedef struct elemento Elem;
-
-// Definição do tipo Pilha
-typedef struct elemento *Pilha;
+// Redefinição do tipo struct item como ItemType
+typedef struct item ItemType;
 
 
 // Protótipo das funções essenciais
-int Push(Pilha *pilha, int);
+int Push(Pilha *pilha, ItemType);
 int Pop(Pilha *pilha);
 int Top(Pilha *pilha);
 int Size(Pilha *piha);

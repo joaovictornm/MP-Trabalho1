@@ -4,7 +4,7 @@
 
 int main()
 {
-   int a[6] = {1, 2, 3, 4, 3, 2};
+   ItemType a[6] = {{1}, {2}, {3}, {4}, {3}, {2}};
    Pilha *pilha = CreateStack();
    printf("Tamanho: %d\n", Size(pilha));
    int i;
@@ -12,6 +12,7 @@ int main()
       Push(pilha, a[i]);
 
    Print(pilha);
+   /*
    printf("Tamanho: %d\n", Size(pilha));
 
    for (i = 0; i < 6; i++)
@@ -33,7 +34,7 @@ int main()
 
    Print(pilha);
 
-   DestroyStack(pilha);
+   DestroyStack(pilha);*/
    //system("pause");
    return 0;
 }
