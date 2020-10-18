@@ -21,7 +21,7 @@ int Push(Pilha *pilha, ItemType item)
     pilha->qtd++;
     return 1;
 }
-/*
+
 int Pop(Pilha *pilha)
 {
     if (pilha == NULL || pilha->qtd == 0)
@@ -35,7 +35,7 @@ int Top(Pilha *pilha)
     if (pilha == NULL || pilha->qtd == 0)
         return 0;
     return pilha->dados[pilha->qtd - 1].inteiro;
-}*/
+}
 
 int Size(Pilha *pilha)
 {
@@ -44,7 +44,7 @@ int Size(Pilha *pilha)
     else
         return pilha->qtd;
 }
-/*
+
 int SetSize(Pilha *pilha, int tamanho)
 {
     int size = pilha->qtd;
@@ -92,7 +92,7 @@ int IsEmpty(Pilha *pilha)
         return 1;
     else
         return 0;
-}*/
+}
 
 Pilha *CreateStack()
 {
@@ -102,12 +102,11 @@ Pilha *CreateStack()
         pilha->qtd = 0;
     return pilha;
 }
-/*
+
 void DestroyStack(Pilha *pilha)
 {
     free(pilha);
 }
-*/
 
 void Print(Pilha *pilha)
 {

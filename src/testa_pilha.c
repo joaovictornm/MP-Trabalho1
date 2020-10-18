@@ -12,7 +12,7 @@ int main()
       Push(pilha, a[i]);
 
    Print(pilha);
-   /*
+   
    printf("Tamanho: %d\n", Size(pilha));
 
    for (i = 0; i < 6; i++)
@@ -34,7 +34,7 @@ int main()
 
    Print(pilha);
 
-   DestroyStack(pilha);*/
-   //system("pause");
+   DestroyStack(pilha);
+
    return 0;
 }
