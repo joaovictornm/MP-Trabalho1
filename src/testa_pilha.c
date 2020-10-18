@@ -1,40 +1,41 @@
+// "Copyright 2020 João Magalhães"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "pilha.h"
 
-int main()
-{
-   ItemType a[6] = {{1}, {2}, {3}, {4}, {3}, {2}};
-   Pilha *pilha = CreateStack();
-   printf("Tamanho: %d\n", Size(pilha));
-   int i;
-   for (i = 0; i < 6; i++)
-      Push(pilha, a[i]);
+int main() {
+  ItemType a[6] = {{1}, {2}, {3}, {4}, {3}, {2}};
+  Pilha *pilha = CreateStack();
+  printf("Tamanho: %d\n", Size(pilha));
+  int i;
+  for (i = 0; i < 6; i++)
+    Push(pilha, a[i]);
 
-   Print(pilha);
-   
-   printf("Tamanho: %d\n", Size(pilha));
+  Print(pilha);
 
-   for (i = 0; i < 6; i++)
-      Pop(pilha);
-   printf("Tamanho: %d\n", Size(pilha));
-   Print(pilha);
+  printf("Tamanho: %d\n", Size(pilha));
 
-   for (i = 0; i < 6; i++)
-      Push(pilha, a[i]);
+  for (i = 0; i < 6; i++)
+    Pop(pilha);
+  printf("Tamanho: %d\n", Size(pilha));
+  Print(pilha);
 
-   printf("Tamanho: %d\n\n\n\n", Size(pilha));
-   Print(pilha);
+  for (i = 0; i < 6; i++)
+    Push(pilha, a[i]);
 
-   printf("Top: %d\n\n\n\n", Top(pilha));
+  printf("Tamanho: %d\n\n\n\n", Size(pilha));
+  Print(pilha);
 
-   printf("1 para se deu certo e 0 para não: %d\n", SetSize(pilha, 20));
+  printf("Top: %d\n\n\n\n", Top(pilha));
 
-   printf("Tamanho: %d\n", Size(pilha));
+  printf("1 para se deu certo e 0 para não: %d\n", SetSize(pilha, 20));
 
-   Print(pilha);
+  printf("Tamanho: %d\n", Size(pilha));
 
-   DestroyStack(pilha);
+  Print(pilha);
 
-   return 0;
+  DestroyStack(pilha);
+
+  return 0;
 }
